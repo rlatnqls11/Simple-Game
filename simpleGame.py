@@ -45,11 +45,11 @@ def d1():
 	    text.pack_forget()
 	    entry.pack_forget()
 	    
-	    #평균점수 산출 공식
+	    #정답률 산출 공식
 	    percent = score / totalQuestions * 100
 
 	    #버튼에 텍스트 삽입
-	    button['text'] = f"평균: {percent}%\n 점수:{score}점\n 합격여부를 확인할려면 클릭하세요"
+	    button['text'] = f"정답률: {percent}%\n 점수:{score}점\n 합격여부를 확인할려면 클릭하세요"
 
             #버튼을 클릭시 gameover 문단 실행
 	    button['command'] = gameover
