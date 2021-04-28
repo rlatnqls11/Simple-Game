@@ -61,7 +61,6 @@ def game_over():
 	    print("당신은 합격입니다! 대구대학교에 대한 지식이 풍부하군요!")
 	else:
 	    print("당신은 불합격입니다. 대구대학교에 대해 더 자세히 공부해 보세요!")
-	window.destroy()
  
 def answer_widget():
 	global entry
