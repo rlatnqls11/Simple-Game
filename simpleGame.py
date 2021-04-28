@@ -55,6 +55,37 @@ def d1():
 	button.pack_forget()
 	totalQuestions+=1
 
+def game_over():
+	global score
+	if score >=7:
+	    print("당신은 합격입니다! 대구대학교에 대한 지식이 풍부하군요!")
+	else:
+	    print("당신은 불합격입니다. 대구대학교에 대해 더 자세히 공부해 보세요!")
+	window.destroy()
+ 
+def answer_widget():
+	global entry
+	entry = tk.Entry(window, textvariable=ans, bg="yellow", font="Arial 20")
+	entry.pack()
+	entry.bind("<Return>", lambda x: check())
+	entry.focus()
+ 
+def empty_textbox():
+	ans.set("")
+	d1()
+ 
+def check():
+	global n, score
+	text.delete("1.0",tk.END)
+	
+	if ans.get() == [totalQuestions-1][1]:
+		text.insert(tk.END, "정답입니다! :) ")
+		score+=1
+		text['bg'] = "green"
+	else:
+		text.insert(tk.END, "오답입니다 :( ")
+		text['bg'] = "red"
+	text.after(1000, empty_textbox)
 
 
 
