@@ -28,6 +28,33 @@ ans = [
  
 ]
 
+numdom = len(ans)
+score = 0
+totalQuestions = 0
+
+def d1():
+	global totalQuestions, score, entry
+	if totalQuestions == numdom:
+	    text.pack_forget()
+	    entry.pack_forget()
+	    percent = (score/totalQuestions) * 100
+		
+	    button['text'] = f"평균: {percent}%\n 점수:{score}점\n 합격여부를 확인할려면 클릭하세요"
+	    button['command'] = game_over
+	    button.pack()
+	    return
+	    
+	if totalQuestions == 0:
+	    answer_widget()
+		
+	text['height'] = 7
+	text['bg'] = 'white'
+	text['width'] = 80
+	text.delete("1.0",tk.END)
+	text.insert("1.0",ans[totalQuestions][0])
+	button.pack_forget()
+	totalQuestions+=1
+
 
 
 
