@@ -87,6 +87,47 @@ def check():
 		text['bg'] = "red"
 	text.after(1000, empty_textbox)
 
+def clickButton() :
+        messagebox.showinfo("도움말","게임시작을 누른 후, 빈칸에 답을 적고 엔터를 눌러!\n혹시라도 퀴즈가 어렵다면 오른쪽의 호랑이 캐릭터를 눌러봐!")
+
+def duduButton() :
+        messagebox.showinfo("힌트요정의 일기장","""안녕! 내 이름은 두두야! 나는 소나무와 백일홍을 가장 좋아해.\n내가 다니는 학교는 1956년에 처음 생겼고, 708, 818, 814 버스를 타면 놀러올 수 있어!
+우리 학교는 이영식 목사님이 처음 지었고 사랑 빛 자유가 건학이념이래! 아 맞다. 교훈은 '큰 뜻을 품어라'야!\n우리학교에도 두류공원이 있었으면 좋겠어 ㅠㅠ 있었으면 스키도 탈 수 있었을껀데..""")
+                                           
+ 
+window = tk.Tk()
+window.title("대구대 Quiz!!!")
+window.geometry("1000x500")
+window['bg'] = '#FFDCDC'
+
+image = tk.PhotoImage(file="다운로드.png")
+image_button = tk.Button(window, image = image, command=duduButton)
+image_button.pack()
+
+label = tk.Label(window, text = "대구대 Quiz", bg="green", font="Arial 48")
+label.pack()
+
+rules = """이 게임은 대구대학교를 잘 모르는 신입생들을 위해 대구대학교에 대한 퀴즈를 내서 대구대학교를 홍보하기 위해 제작되었습니다.
+
+모든 퀴즈의 답은 한국어로 입력하셔야 되며, 단위가 있다면 모두 적어주셔야 정답으로 처리됩니다.
+
+모두 만점을 받을 수 있길 기원합니다.
+
+"""
+text = tk.Text(window, bg="white",height=7,font="Arial 20")
+text.insert("1.0", rules)
+text.pack()
+
+b1 = tk.Button(window, text="(도움말)", bg="white", fg="red", command=clickButton, font="Arial 10")
+b1.place(x=0, y=472)
+b1.pack
+
+button = tk.Button(window, text="게임시작", bg="black", fg="white", command=d1, font="Arial 20")
+button.pack()
+
+image_button.place(x=780, y=300)
+ans = tk.StringVar()
+window.mainloop()
 
 
 
